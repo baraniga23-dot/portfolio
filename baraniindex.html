@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <!-- ============================================================
+       META & SEO TAGS
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary SEO -->
+  <title>Baraniga | Web Developer & Graphics Designer | Cyber Portfolio</title>
+  <meta name="description" content="Baraniga – B.Sc Student at TBML College. Professional Web Developer & Graphics Designer specializing in responsive websites, UI/UX design, and creative graphic solutions." />
+  <meta name="keywords" content="Baraniga, Web Developer, Graphics Designer, Portfolio, TBML College, UI/UX, HTML, CSS, JavaScript, Bootstrap, Photoshop, Illustrator" />
+  <meta name="author" content="Baraniga" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#00ffff" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://baraniga.github.io/" />
+  <meta property="og:title" content="Baraniga | Web Developer & Graphics Designer" />
+  <meta property="og:description" content="Professional portfolio of Baraniga – Web Developer & Graphics Designer. Explore projects, skills, and services." />
+  <meta property="og:image" content="https://baraniga.github.io/assets/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://baraniga.github.io/" />
+  <meta name="twitter:title" content="Baraniga | Web Developer & Graphics Designer" />
+  <meta name="twitter:description" content="Professional portfolio of Baraniga – Web Developer & Graphics Designer." />
+  <meta name="twitter:image" content="https://baraniga.github.io/assets/og-image.png" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://baraniga.github.io/" />
+
+  <!-- ============================================================
+       STRUCTURED DATA (JSON-LD)
+  ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Baraniga",
+    "jobTitle": "Web Developer & Graphics Designer",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "TBML College"
+    },
+    "url": "https://baraniga.github.io/",
+    "sameAs": [
+      "https://github.com/baraniga",
+      "https://linkedin.com/in/baraniga",
+      "https://twitter.com/baraniga"
+    ],
+    "knowsAbout": ["Web Development","Graphic Design","UI/UX Design","HTML","CSS","JavaScript","Bootstrap","Adobe Photoshop","Adobe Illustrator"]
+  }
+  </script>
+
+  <!-- ============================================================
+       EXTERNAL FONTS & ICONS
+  ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       LOADING SCREEN
+  ============================================================ -->
+  <div id="loader" role="status" aria-label="Loading portfolio">
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-bracket">[</span>
+        <span class="loader-name">BARANIGA</span>
+        <span class="loader-bracket">]</span>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loaderBar"></div>
+      </div>
+      <div class="loader-text" id="loaderText">INITIALIZING SYSTEM...</div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CUSTOM CURSOR
+  ============================================================ -->
+  <div id="cursor" aria-hidden="true"></div>
+  <div id="cursorFollower" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       PARTICLE CANVAS (BACKGROUND)
+  ============================================================ -->
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav" role="navigation" aria-label="Main Navigation">
+    <div class="container">
+      <!-- Brand -->
+      <a class="navbar-brand" href="#home" aria-label="Baraniga Home">
+        <span class="brand-bracket">&lt;</span>
+        <span class="brand-name">Baraniga</span>
+        <span class="brand-bracket">/&gt;</span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarMenu" aria-controls="navbarMenu"
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-icon"><i class="bi bi-grid-3x3-gap-fill"></i></span>
+      </button>
+
+      <!-- Nav Links -->
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#timeline">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3">
+            <button id="themeToggle" class="btn btn-theme-toggle" aria-label="Toggle dark/light mode">
+              <i class="bi bi-sun-fill" id="themeIcon"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       SECTION 1 – HERO
+  ============================================================ -->
+  <section id="home" class="hero-section" aria-label="Hero Introduction">
+    <!-- Matrix Rain Canvas -->
+    <canvas id="matrixCanvas" aria-hidden="true"></canvas>
+
+    <!-- Cyber Grid Overlay -->
+    <div class="cyber-grid" aria-hidden="true"></div>
+
+    <!-- Glitch Lines -->
+    <div class="glitch-lines" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+
+    <div class="container hero-content">
+      <div class="row align-items-center min-vh-100">
+        <div class="col-lg-7 order-lg-1 order-2 hero-text">
+          <!-- Status Badge -->
+          <div class="hero-status" data-aos="fade-right">
+            <span class="status-dot"></span>
+            <span class="status-text">Available for Hire</span>
+          </div>
+
+          <!-- Greeting -->
+          <p class="hero-greeting" data-aos="fade-right" data-aos-delay="100">
+            <span class="code-tag">&lt;h1&gt;</span> Hello, I'm
+          </p>
+
+          <!-- Name with Glitch Effect -->
+          <h1 class="hero-name glitch" data-text="BARANIGA" data-aos="fade-right" data-aos-delay="150">
+            BARANIGA
+          </h1>
+
+          <!-- Typing Title -->
+          <div class="hero-title-wrap" data-aos="fade-right" data-aos-delay="200">
+            <span class="hero-title-prefix">&gt;&gt; </span>
+            <span id="typingText" class="hero-typing"></span>
+            <span class="cursor-blink">|</span>
+          </div>
+
+          <!-- Tagline -->
+          <p class="hero-tagline" data-aos="fade-right" data-aos-delay="250">
+            B.Sc Student @ <span class="accent-text">TBML College</span> · Crafting digital experiences
+            with <span class="accent-green">clean code</span> &amp; <span class="accent-purple">creative design</span>.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero-buttons" data-aos="fade-up" data-aos-delay="300">
+            <a href="#portfolio" class="btn btn-cyber-primary me-3" id="viewPortfolioBtn">
+              <i class="bi bi-grid-3x3-gap me-2"></i>View Portfolio
+              <span class="btn-glow"></span>
+            </a>
+            <a href="#contact" class="btn btn-cyber-outline" id="contactMeBtn">
+              <i class="bi bi-send me-2"></i>Contact Me
+            </a>
+          </div>
+
+          <!-- Stats Row -->
+          <div class="hero-stats" data-aos="fade-up" data-aos-delay="350">
+            <div class="stat-item">
+              <span class="stat-number counter" data-target="15">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number counter" data-target="8">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Skills</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number counter" data-target="2">0</span><span class="stat-plus">+</span>
+              <span class="stat-label">Years Exp</span>
+            </div>
+          </div>
+
+          <p class="hero-greeting mt-3 mb-0"><span class="code-tag">&lt;/h1&gt;</span></p>
+        </div>
+
+        <!-- Hero Visual / Avatar -->
+        <div class="col-lg-5 order-lg-2 order-1 hero-visual" data-aos="zoom-in" data-aos-delay="400">
+          <div class="avatar-wrapper">
+            <div class="avatar-ring ring-1" aria-hidden="true"></div>
+            <div class="avatar-ring ring-2" aria-hidden="true"></div>
+            <div class="avatar-ring ring-3" aria-hidden="true"></div>
+            <div class="avatar-core">
+              <div class="avatar-initials">B</div>
+              <!-- Rotating Tech Icons -->
+              <div class="orbit-icon orbit-1"><i class="fab fa-html5"></i></div>
+              <div class="orbit-icon orbit-2"><i class="fab fa-css3-alt"></i></div>
+              <div class="orbit-icon orbit-3"><i class="fab fa-js"></i></div>
+              <div class="orbit-icon orbit-4"><i class="fab fa-bootstrap"></i></div>
+              <div class="orbit-icon orbit-5"><i class="fab fa-figma"></i></div>
+              <div class="orbit-icon orbit-6"><i class="fab fa-adobe"></i></div>
+            </div>
+            <!-- Floating Badges -->
+            <div class="float-badge badge-code">
+              <i class="bi bi-code-slash"></i> Code
+            </div>
+            <div class="float-badge badge-design">
+              <i class="bi bi-palette2"></i> Design
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator" aria-label="Scroll down">
+        <span class="scroll-mouse">
+          <span class="scroll-dot"></span>
+        </span>
+        <span class="scroll-label">Scroll Down</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2 – ABOUT ME
+  ============================================================ -->
+  <section id="about" class="section about-section" aria-label="About Me">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">// WHO AM I</span>
+        <h2 class="section-title">About <span class="highlight">Me</span></h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="row align-items-center g-5">
+        <!-- About Card / Visual -->
+        <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+          <div class="about-card glass-card">
+            <div class="about-avatar">
+              <div class="about-initial-circle">B</div>
+              <div class="about-status-ring" aria-hidden="true"></div>
+            </div>
+            <div class="about-info">
+              <h3 class="about-name">Baraniga</h3>
+              <p class="about-role"><i class="bi bi-code-square me-2"></i>Web Developer</p>
+              <p class="about-role"><i class="bi bi-palette me-2"></i>Graphics Designer</p>
+              <p class="about-role"><i class="bi bi-mortarboard me-2"></i>B.Sc Student</p>
+            </div>
+            <!-- Quick Facts -->
+            <div class="about-facts">
+              <div class="fact-row">
+                <span class="fact-key"><i class="bi bi-building"></i> College</span>
+                <span class="fact-val">TBML College</span>
+              </div>
+              <div class="fact-row">
+                <span class="fact-key"><i class="bi bi-geo-alt"></i> Location</span>
+                <span class="fact-val">India</span>
+              </div>
+              <div class="fact-row">
+                <span class="fact-key"><i class="bi bi-briefcase"></i> Freelance</span>
+                <span class="fact-val accent-green">Available</span>
+              </div>
+              <div class="fact-row">
+                <span class="fact-key"><i class="bi bi-translate"></i> Languages</span>
+                <span class="fact-val">Tamil, English</span>
+              </div>
+            </div>
+            <a href="#contact" class="btn btn-cyber-primary w-100 mt-3">
+              <i class="bi bi-download me-2"></i>Hire Me
+            </a>
+          </div>
+        </div>
+
+        <!-- About Text -->
+        <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
+          <div class="about-text-block">
+            <p class="about-intro">
+              Hi! I'm <strong class="accent-cyan">Baraniga</strong>, a passionate Web Developer and Graphics Designer
+              pursuing my B.Sc at TBML College. I thrive at the intersection of technology and creativity —
+              building websites that are not only functional but visually stunning.
+            </p>
+            <p class="about-body">
+              I specialize in crafting responsive, modern web experiences using HTML5, CSS3, JavaScript, and Bootstrap.
+              On the design side, I bring ideas to life with Adobe Photoshop and Illustrator, creating logos, banners,
+              and complete brand identities.
+            </p>
+
+            <!-- Career Objective -->
+            <div class="career-objective glass-card-sm">
+              <h4><i class="bi bi-bullseye me-2 accent-cyan"></i>Career Objective</h4>
+              <p>To leverage my technical and creative skills to build impactful digital solutions while continuously
+                growing as a full-stack developer and visual designer in a dynamic, forward-thinking environment.</p>
+            </div>
+
+            <!-- Education -->
+            <div class="edu-block glass-card-sm mt-3">
+              <h4><i class="bi bi-mortarboard me-2 accent-cyan"></i>Education</h4>
+              <div class="edu-item">
+                <span class="edu-degree">B.Sc (Computer Science)</span>
+                <span class="edu-college">TBML College</span>
+                <span class="edu-year">2022 – Present</span>
+              </div>
+            </div>
+
+            <!-- Skill Indicators -->
+            <div class="about-indicators mt-4">
+              <div class="indicator-item" data-aos="fade-left" data-aos-delay="200">
+                <span class="indicator-label">Problem Solving</span>
+                <div class="indicator-bar"><div class="indicator-fill" data-width="90"></div></div>
+                <span class="indicator-value">90%</span>
+              </div>
+              <div class="indicator-item" data-aos="fade-left" data-aos-delay="250">
+                <span class="indicator-label">Creative Design</span>
+                <div class="indicator-bar"><div class="indicator-fill" data-width="85"></div></div>
+                <span class="indicator-value">85%</span>
+              </div>
+              <div class="indicator-item" data-aos="fade-left" data-aos-delay="300">
+                <span class="indicator-label">Team Collaboration</span>
+                <div class="indicator-bar"><div class="indicator-fill" data-width="88"></div></div>
+                <span class="indicator-value">88%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 3 – SKILLS
+  ============================================================ -->
+  <section id="skills" class="section skills-section" aria-label="Skills">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">// TECH STACK</span>
+        <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Web Development Skills -->
+        <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+          <div class="skills-card glass-card">
+            <div class="skills-card-header">
+              <i class="bi bi-code-slash skills-icon"></i>
+              <h3>Web Development</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fab fa-html5"></i> HTML5</span>
+                  <span class="skill-percent">95%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="95" style="--skill-color:#e34f26;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fab fa-css3-alt"></i> CSS3</span>
+                  <span class="skill-percent">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="90" style="--skill-color:#264de4;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fab fa-js"></i> JavaScript</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="80" style="--skill-color:#f7df1e;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                  <span class="skill-percent">88%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="88" style="--skill-color:#7952b3;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fas fa-dollar-sign"></i> jQuery</span>
+                  <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="75" style="--skill-color:#0769ad;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="bi bi-phone"></i> Responsive Design</span>
+                  <span class="skill-percent">92%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="92" style="--skill-color:#00ffff;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Design Skills -->
+        <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+          <div class="skills-card glass-card">
+            <div class="skills-card-header">
+              <i class="bi bi-palette skills-icon"></i>
+              <h3>UI/UX & Graphic Design</h3>
+            </div>
+            <div class="skill-list">
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="bi bi-layout-wtf"></i> UI/UX Design</span>
+                  <span class="skill-percent">82%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="82" style="--skill-color:#8a2be2;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fas fa-paint-brush"></i> Graphic Design</span>
+                  <span class="skill-percent">87%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="87" style="--skill-color:#39ff14;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fab fa-adobe"></i> Adobe Photoshop</span>
+                  <span class="skill-percent">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="85" style="--skill-color:#31a8ff;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fab fa-adobe"></i> Adobe Illustrator</span>
+                  <span class="skill-percent">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="80" style="--skill-color:#ff7c00;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="fab fa-figma"></i> Figma</span>
+                  <span class="skill-percent">78%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="78" style="--skill-color:#f24e1e;"></div></div>
+              </div>
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span class="skill-name"><i class="bi bi-vector-pen"></i> Logo Design</span>
+                  <span class="skill-percent">84%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="84" style="--skill-color:#ff006e;"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Icon Grid -->
+      <div class="tech-icons-row mt-5" data-aos="fade-up" data-aos-delay="200">
+        <div class="tech-icon-item" title="HTML5"><i class="fab fa-html5"></i><span>HTML5</span></div>
+        <div class="tech-icon-item" title="CSS3"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+        <div class="tech-icon-item" title="JavaScript"><i class="fab fa-js"></i><span>JavaScript</span></div>
+        <div class="tech-icon-item" title="Bootstrap"><i class="fab fa-bootstrap"></i><span>Bootstrap</span></div>
+        <div class="tech-icon-item" title="jQuery"><i class="fas fa-code"></i><span>jQuery</span></div>
+        <div class="tech-icon-item" title="Figma"><i class="fab fa-figma"></i><span>Figma</span></div>
+        <div class="tech-icon-item" title="Adobe"><i class="fab fa-adobe"></i><span>Adobe CC</span></div>
+        <div class="tech-icon-item" title="Git"><i class="fab fa-git-alt"></i><span>Git</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4 – PORTFOLIO
+  ============================================================ -->
+  <section id="portfolio" class="section portfolio-section" aria-label="Portfolio Projects">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">// MY WORK</span>
+        <h2 class="section-title">Portfolio <span class="highlight">Projects</span></h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="portfolio-filters text-center mb-5" data-aos="fade-up" data-aos-delay="100">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="web">Web Dev</button>
+        <button class="filter-btn" data-filter="design">Design</button>
+        <button class="filter-btn" data-filter="uiux">UI/UX</button>
+      </div>
+
+      <!-- Portfolio Grid -->
+      <div class="row g-4" id="portfolioGrid">
+
+        <!-- Project 1 -->
+        <div class="col-lg-4 col-md-6 portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-card glass-card">
+            <div class="portfolio-img-wrap">
+              <div class="portfolio-img-placeholder web-bg">
+                <i class="bi bi-globe2"></i>
+                <span>E-Commerce Platform</span>
+              </div>
+              <div class="portfolio-overlay">
+                <a href="#" class="btn btn-cyber-sm me-2" aria-label="Live Demo for E-Commerce Platform"><i class="bi bi-eye me-1"></i>Live Demo</a>
+                <a href="#" class="btn btn-cyber-outline-sm" aria-label="Source Code for E-Commerce Platform"><i class="bi bi-github me-1"></i>Source</a>
+              </div>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-tag">Web Dev</span>
+              <h3 class="portfolio-title">E-Commerce Platform</h3>
+              <p class="portfolio-desc">A fully responsive online store with product listing, cart, and checkout using HTML, CSS, JS & Bootstrap.</p>
+              <div class="portfolio-tech">
+                <span>HTML</span><span>CSS</span><span>JS</span><span>Bootstrap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-lg-4 col-md-6 portfolio-item" data-category="design" data-aos="fade-up" data-aos-delay="150">
+          <div class="portfolio-card glass-card">
+            <div class="portfolio-img-wrap">
+              <div class="portfolio-img-placeholder design-bg">
+                <i class="bi bi-palette2"></i>
+                <span>Brand Identity Kit</span>
+              </div>
+              <div class="portfolio-overlay">
+                <a href="#" class="btn btn-cyber-sm me-2" aria-label="Live Demo for Brand Identity Kit"><i class="bi bi-eye me-1"></i>Live Demo</a>
+                <a href="#" class="btn btn-cyber-outline-sm" aria-label="Source Code for Brand Identity Kit"><i class="bi bi-github me-1"></i>Source</a>
+              </div>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-tag design">Design</span>
+              <h3 class="portfolio-title">Brand Identity Kit</h3>
+              <p class="portfolio-desc">Complete brand identity design including logo, color palette, typography, and brand guidelines for a tech startup.</p>
+              <div class="portfolio-tech">
+                <span>Illustrator</span><span>Photoshop</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-lg-4 col-md-6 portfolio-item" data-category="uiux" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-card glass-card">
+            <div class="portfolio-img-wrap">
+              <div class="portfolio-img-placeholder uiux-bg">
+                <i class="bi bi-phone"></i>
+                <span>Mobile App UI</span>
+              </div>
+              <div class="portfolio-overlay">
+                <a href="#" class="btn btn-cyber-sm me-2" aria-label="Live Demo for Mobile App UI"><i class="bi bi-eye me-1"></i>Live Demo</a>
+                <a href="#" class="btn btn-cyber-outline-sm" aria-label="Source Code for Mobile App UI"><i class="bi bi-github me-1"></i>Source</a>
+              </div>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-tag uiux">UI/UX</span>
+              <h3 class="portfolio-title">Mobile App UI Design</h3>
+              <p class="portfolio-desc">Modern, intuitive mobile app interface design for a fitness tracking application with seamless UX flows.</p>
+              <div class="portfolio-tech">
+                <span>Figma</span><span>UI/UX</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-lg-4 col-md-6 portfolio-item" data-category="web" data-aos="fade-up" data-aos-delay="250">
+          <div class="portfolio-card glass-card">
+            <div class="portfolio-img-wrap">
+              <div class="portfolio-img-placeholder web-bg-2">
+                <i class="bi bi-person-workspace"></i>
+                <span>Portfolio Template</span>
+              </div>
+              <div class="portfolio-overlay">
+                <a href="#" class="btn btn-cyber-sm me-2" aria-label="Live Demo for Portfolio Template"><i class="bi bi-eye me-1"></i>Live Demo</a>
+                <a href="#" class="btn btn-cyber-outline-sm" aria-label="Source Code for Portfolio Template"><i class="bi bi-github me-1"></i>Source</a>
+              </div>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-tag">Web Dev</span>
+              <h3 class="portfolio-title">Portfolio Template</h3>
+              <p class="portfolio-desc">A clean, minimal, and professional portfolio website template with dark/light mode, animations, and SEO optimization.</p>
+              <div class="portfolio-tech">
+                <span>HTML</span><span>CSS</span><span>jQuery</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="col-lg-4 col-md-6 portfolio-item" data-category="design" data-aos="fade-up" data-aos-delay="300">
+          <div class="portfolio-card glass-card">
+            <div class="portfolio-img-wrap">
+              <div class="portfolio-img-placeholder design-bg-2">
+                <i class="bi bi-image"></i>
+                <span>Social Media Kit</span>
+              </div>
+              <div class="portfolio-overlay">
+                <a href="#" class="btn btn-cyber-sm me-2" aria-label="Live Demo for Social Media Kit"><i class="bi bi-eye me-1"></i>Live Demo</a>
+                <a href="#" class="btn btn-cyber-outline-sm" aria-label="Source Code for Social Media Kit"><i class="bi bi-github me-1"></i>Source</a>
+              </div>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-tag design">Design</span>
+              <h3 class="portfolio-title">Social Media Kit</h3>
+              <p class="portfolio-desc">Cohesive social media templates designed for a lifestyle brand – Instagram posts, stories, and banners.</p>
+              <div class="portfolio-tech">
+                <span>Photoshop</span><span>Illustrator</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="col-lg-4 col-md-6 portfolio-item" data-category="uiux" data-aos="fade-up" data-aos-delay="350">
+          <div class="portfolio-card glass-card">
+            <div class="portfolio-img-wrap">
+              <div class="portfolio-img-placeholder uiux-bg-2">
+                <i class="bi bi-speedometer2"></i>
+                <span>Dashboard UI</span>
+              </div>
+              <div class="portfolio-overlay">
+                <a href="#" class="btn btn-cyber-sm me-2" aria-label="Live Demo for Dashboard UI"><i class="bi bi-eye me-1"></i>Live Demo</a>
+                <a href="#" class="btn btn-cyber-outline-sm" aria-label="Source Code for Dashboard UI"><i class="bi bi-github me-1"></i>Source</a>
+              </div>
+            </div>
+            <div class="portfolio-body">
+              <span class="portfolio-tag uiux">UI/UX</span>
+              <h3 class="portfolio-title">Cyber Dashboard UI</h3>
+              <p class="portfolio-desc">A futuristic admin dashboard with data visualization widgets, analytics panels, and dark cyberpunk aesthetics.</p>
+              <div class="portfolio-tech">
+                <span>Figma</span><span>CSS</span><span>Bootstrap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /portfolioGrid -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5 – SERVICES
+  ============================================================ -->
+  <section id="services" class="section services-section" aria-label="Services Offered">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">// WHAT I DO</span>
+        <h2 class="section-title">My <span class="highlight">Services</span></h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Service 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-card glass-card">
+            <div class="service-icon-wrap">
+              <i class="bi bi-code-square"></i>
+            </div>
+            <h3 class="service-title">Website Development</h3>
+            <p class="service-desc">Building fast, secure, and scalable websites with clean code. From landing pages to full multi-page sites.</p>
+            <ul class="service-list">
+              <li><i class="bi bi-check2-circle"></i> Custom HTML/CSS/JS</li>
+              <li><i class="bi bi-check2-circle"></i> Bootstrap Integration</li>
+              <li><i class="bi bi-check2-circle"></i> jQuery Interactions</li>
+              <li><i class="bi bi-check2-circle"></i> SEO Optimization</li>
+            </ul>
+            <div class="service-number" aria-hidden="true">01</div>
+          </div>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+          <div class="service-card glass-card featured">
+            <div class="service-badge">Popular</div>
+            <div class="service-icon-wrap featured-icon">
+              <i class="bi bi-phone"></i>
+            </div>
+            <h3 class="service-title">Responsive Web Design</h3>
+            <p class="service-desc">Pixel-perfect, mobile-first responsive layouts that look great on all devices and screen sizes.</p>
+            <ul class="service-list">
+              <li><i class="bi bi-check2-circle"></i> Mobile-First Approach</li>
+              <li><i class="bi bi-check2-circle"></i> Cross-Browser Compatible</li>
+              <li><i class="bi bi-check2-circle"></i> Performance Optimized</li>
+              <li><i class="bi bi-check2-circle"></i> Accessibility Ready</li>
+            </ul>
+            <div class="service-number" aria-hidden="true">02</div>
+          </div>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-card glass-card">
+            <div class="service-icon-wrap">
+              <i class="bi bi-palette2"></i>
+            </div>
+            <h3 class="service-title">Graphic Design</h3>
+            <p class="service-desc">Creative visual solutions from social media graphics to print materials, banners, and marketing collateral.</p>
+            <ul class="service-list">
+              <li><i class="bi bi-check2-circle"></i> Social Media Graphics</li>
+              <li><i class="bi bi-check2-circle"></i> Print & Digital Ads</li>
+              <li><i class="bi bi-check2-circle"></i> Brochures & Flyers</li>
+              <li><i class="bi bi-check2-circle"></i> Photo Editing</li>
+            </ul>
+            <div class="service-number" aria-hidden="true">03</div>
+          </div>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+          <div class="service-card glass-card">
+            <div class="service-icon-wrap">
+              <i class="bi bi-vector-pen"></i>
+            </div>
+            <h3 class="service-title">Logo Design</h3>
+            <p class="service-desc">Memorable, professional logo designs that represent your brand identity and make lasting impressions.</p>
+            <ul class="service-list">
+              <li><i class="bi bi-check2-circle"></i> Brand Strategy</li>
+              <li><i class="bi bi-check2-circle"></i> Multiple Concepts</li>
+              <li><i class="bi bi-check2-circle"></i> Vector-Based Files</li>
+              <li><i class="bi bi-check2-circle"></i> Full Brand Kit</li>
+            </ul>
+            <div class="service-number" aria-hidden="true">04</div>
+          </div>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-card glass-card">
+            <div class="service-icon-wrap">
+              <i class="bi bi-layout-wtf"></i>
+            </div>
+            <h3 class="service-title">UI/UX Design</h3>
+            <p class="service-desc">User-centered interface design focused on seamless experiences, intuitive navigation, and visual hierarchy.</p>
+            <ul class="service-list">
+              <li><i class="bi bi-check2-circle"></i> Wireframing</li>
+              <li><i class="bi bi-check2-circle"></i> Prototyping (Figma)</li>
+              <li><i class="bi bi-check2-circle"></i> User Research</li>
+              <li><i class="bi bi-check2-circle"></i> Interaction Design</li>
+            </ul>
+            <div class="service-number" aria-hidden="true">05</div>
+          </div>
+        </div>
+
+        <!-- Service 6 – CTA -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
+          <div class="service-cta glass-card">
+            <div class="service-cta-inner">
+              <i class="bi bi-rocket-takeoff service-cta-icon"></i>
+              <h3>Have a Project in Mind?</h3>
+              <p>Let's collaborate and build something extraordinary together!</p>
+              <a href="#contact" class="btn btn-cyber-primary">Let's Talk <i class="bi bi-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6 – EXPERIENCE & EDUCATION TIMELINE
+  ============================================================ -->
+  <section id="timeline" class="section timeline-section" aria-label="Experience and Education Timeline">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">// MY JOURNEY</span>
+        <h2 class="section-title">Experience &amp; <span class="highlight">Education</span></h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Timeline Line -->
+        <div class="timeline-line" aria-hidden="true"></div>
+
+        <!-- Event 1 -->
+        <div class="timeline-event left" data-aos="fade-right" data-aos-delay="100">
+          <div class="timeline-dot" aria-hidden="true"><i class="bi bi-mortarboard-fill"></i></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-card-header">
+              <span class="timeline-year">2022 – Present</span>
+              <span class="timeline-type edu"><i class="bi bi-book"></i> Education</span>
+            </div>
+            <h3 class="timeline-title">B.Sc in Computer Science</h3>
+            <p class="timeline-org"><i class="bi bi-building me-2"></i>TBML College</p>
+            <p class="timeline-desc">Pursuing Bachelor of Science in Computer Science, focusing on programming, web technologies, database management, and software engineering principles.</p>
+            <div class="timeline-tags">
+              <span>Programming</span><span>Web Tech</span><span>Database</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="timeline-event right" data-aos="fade-left" data-aos-delay="150">
+          <div class="timeline-dot" aria-hidden="true"><i class="bi bi-laptop-fill"></i></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-card-header">
+              <span class="timeline-year">2023 – Present</span>
+              <span class="timeline-type exp"><i class="bi bi-briefcase"></i> Freelance</span>
+            </div>
+            <h3 class="timeline-title">Freelance Web Developer</h3>
+            <p class="timeline-org"><i class="bi bi-person-workspace me-2"></i>Self-Employed</p>
+            <p class="timeline-desc">Delivering responsive web solutions to small businesses and individuals. Specializing in portfolio sites, landing pages, and e-commerce front-ends.</p>
+            <div class="timeline-tags">
+              <span>HTML/CSS</span><span>JavaScript</span><span>Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="timeline-event left" data-aos="fade-right" data-aos-delay="200">
+          <div class="timeline-dot" aria-hidden="true"><i class="bi bi-palette-fill"></i></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-card-header">
+              <span class="timeline-year">2023 – Present</span>
+              <span class="timeline-type exp"><i class="bi bi-brush"></i> Design</span>
+            </div>
+            <h3 class="timeline-title">Freelance Graphics Designer</h3>
+            <p class="timeline-org"><i class="bi bi-person-workspace me-2"></i>Self-Employed</p>
+            <p class="timeline-desc">Creating brand identities, logos, social media content, and marketing materials for diverse clients using Adobe Photoshop and Illustrator.</p>
+            <div class="timeline-tags">
+              <span>Photoshop</span><span>Illustrator</span><span>Branding</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 4 -->
+        <div class="timeline-event right" data-aos="fade-left" data-aos-delay="250">
+          <div class="timeline-dot" aria-hidden="true"><i class="bi bi-award-fill"></i></div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-card-header">
+              <span class="timeline-year">2024</span>
+              <span class="timeline-type cert"><i class="bi bi-patch-check"></i> Certification</span>
+            </div>
+            <h3 class="timeline-title">Web Design Certification</h3>
+            <p class="timeline-org"><i class="bi bi-globe me-2"></i>Online Platform</p>
+            <p class="timeline-desc">Completed advanced web design certification covering modern CSS, responsive frameworks, and performance optimization techniques.</p>
+            <div class="timeline-tags">
+              <span>Certified</span><span>Advanced CSS</span><span>Performance</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /timeline-container -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 7 – CONTACT
+  ============================================================ -->
+  <section id="contact" class="section contact-section" aria-label="Contact">
+    <div class="container">
+      <div class="section-header text-center" data-aos="fade-up">
+        <span class="section-tag">// GET IN TOUCH</span>
+        <h2 class="section-title">Contact <span class="highlight">Me</span></h2>
+        <div class="section-line" aria-hidden="true"></div>
+      </div>
+
+      <div class="row g-5">
+        <!-- Contact Info -->
+        <div class="col-lg-5" data-aos="fade-right" data-aos-delay="100">
+          <div class="contact-info">
+            <p class="contact-intro">Have a project in mind or want to discuss opportunities? I'd love to hear from you. Let's build something amazing together!</p>
+
+            <div class="contact-items">
+              <div class="contact-item glass-card-sm">
+                <div class="contact-icon-wrap">
+                  <i class="bi bi-envelope-fill"></i>
+                </div>
+                <div class="contact-item-text">
+                  <span class="contact-item-label">Email</span>
+                  <a href="mailto:baraniga@email.com" class="contact-item-value">baraniga@email.com</a>
+                </div>
+              </div>
+              <div class="contact-item glass-card-sm">
+                <div class="contact-icon-wrap">
+                  <i class="bi bi-telephone-fill"></i>
+                </div>
+                <div class="contact-item-text">
+                  <span class="contact-item-label">Phone</span>
+                  <a href="tel:+91XXXXXXXXXX" class="contact-item-value">+91 XXXX XXXXXX</a>
+                </div>
+              </div>
+              <div class="contact-item glass-card-sm">
+                <div class="contact-icon-wrap">
+                  <i class="bi bi-geo-alt-fill"></i>
+                </div>
+                <div class="contact-item-text">
+                  <span class="contact-item-label">Location</span>
+                  <span class="contact-item-value">Tamil Nadu, India</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links mt-4">
+              <h4 class="social-label">Follow Me</h4>
+              <div class="social-icons">
+                <a href="#" class="social-btn" aria-label="GitHub Profile" id="githubLink"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-btn" aria-label="LinkedIn Profile" id="linkedinLink"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-btn" aria-label="Twitter Profile" id="twitterLink"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-btn" aria-label="Instagram Profile" id="instagramLink"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-btn" aria-label="Dribbble Profile" id="dribbbleLink"><i class="fab fa-dribbble"></i></a>
+                <a href="#" class="social-btn" aria-label="Behance Profile" id="behanceLink"><i class="fab fa-behance"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7" data-aos="fade-left" data-aos-delay="150">
+          <form class="contact-form glass-card" id="contactForm" novalidate aria-label="Contact Form">
+            <div class="form-header">
+              <h3><i class="bi bi-chat-text me-2 accent-cyan"></i>Send a Message</h3>
+            </div>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="contactName" class="form-label">Your Name *</label>
+                  <div class="input-wrap">
+                    <i class="bi bi-person input-icon"></i>
+                    <input type="text" class="form-control cyber-input" id="contactName" name="name"
+                           placeholder="John Doe" required aria-required="true" />
+                  </div>
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="contactEmail" class="form-label">Email Address *</label>
+                  <div class="input-wrap">
+                    <i class="bi bi-envelope input-icon"></i>
+                    <input type="email" class="form-control cyber-input" id="contactEmail" name="email"
+                           placeholder="john@email.com" required aria-required="true" />
+                  </div>
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="contactSubject" class="form-label">Subject</label>
+                  <div class="input-wrap">
+                    <i class="bi bi-chat-quote input-icon"></i>
+                    <input type="text" class="form-control cyber-input" id="contactSubject" name="subject"
+                           placeholder="Project Inquiry" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="contactMessage" class="form-label">Message *</label>
+                  <textarea class="form-control cyber-input" id="contactMessage" name="message"
+                            rows="5" placeholder="Tell me about your project..." required aria-required="true"></textarea>
+                  <div class="invalid-feedback">Please enter your message.</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-cyber-primary w-100" id="sendMsgBtn">
+                  <span class="btn-text"><i class="bi bi-send me-2"></i>Send Message</span>
+                  <span class="btn-loading d-none"><span class="spinner-border spinner-border-sm me-2"></span>Sending...</span>
+                </button>
+              </div>
+            </div>
+            <!-- Success Message -->
+            <div id="formSuccess" class="form-success d-none mt-3" role="alert">
+              <i class="bi bi-check-circle-fill me-2"></i>Message sent successfully! I'll get back to you soon.
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row g-4">
+          <!-- Brand -->
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-brand">
+              <span class="brand-bracket">&lt;</span>
+              <span class="brand-name">Baraniga</span>
+              <span class="brand-bracket">/&gt;</span>
+            </div>
+            <p class="footer-tagline">Web Developer &amp; Graphics Designer crafting premium digital experiences with clean code and creative vision.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="GitHub" class="footer-social-btn"><i class="fab fa-github"></i></a>
+              <a href="#" aria-label="LinkedIn" class="footer-social-btn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#" aria-label="Twitter" class="footer-social-btn"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="Instagram" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <h5 class="footer-heading">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="#home"><i class="bi bi-chevron-right"></i> Home</a></li>
+              <li><a href="#about"><i class="bi bi-chevron-right"></i> About</a></li>
+              <li><a href="#skills"><i class="bi bi-chevron-right"></i> Skills</a></li>
+              <li><a href="#portfolio"><i class="bi bi-chevron-right"></i> Portfolio</a></li>
+              <li><a href="#services"><i class="bi bi-chevron-right"></i> Services</a></li>
+              <li><a href="#contact"><i class="bi bi-chevron-right"></i> Contact</a></li>
+            </ul>
+          </div>
+          <!-- Services -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Services</h5>
+            <ul class="footer-links">
+              <li><a href="#services"><i class="bi bi-chevron-right"></i> Website Development</a></li>
+              <li><a href="#services"><i class="bi bi-chevron-right"></i> Responsive Design</a></li>
+              <li><a href="#services"><i class="bi bi-chevron-right"></i> Graphic Design</a></li>
+              <li><a href="#services"><i class="bi bi-chevron-right"></i> Logo Design</a></li>
+              <li><a href="#services"><i class="bi bi-chevron-right"></i> UI/UX Design</a></li>
+            </ul>
+          </div>
+          <!-- Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-heading">Contact</h5>
+            <ul class="footer-contact">
+              <li><i class="bi bi-envelope"></i><a href="mailto:baraniga@email.com">baraniga@email.com</a></li>
+              <li><i class="bi bi-telephone"></i><a href="tel:+91XXXXXXXXXX">+91 XXXX XXXXXX</a></li>
+              <li><i class="bi bi-geo-alt"></i><span>Tamil Nadu, India</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="footer-copy">&copy; <span id="currentYear"></span> <strong>Baraniga</strong>. All Rights Reserved.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <p class="footer-made">Made with <i class="bi bi-heart-fill text-danger"></i> &amp; <i class="bi bi-code-slash accent-cyan"></i> by Baraniga</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       BACK TO TOP BUTTON
+  ============================================================ -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-chevron-up"></i>
+  </button>
+
+  <!-- ============================================================
+       SCRIPTS
+  ============================================================ -->
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!-- Bootstrap 5 Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
